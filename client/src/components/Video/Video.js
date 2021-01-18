@@ -17,7 +17,7 @@ const Video = () => {
     return(
     
     <div className = "VideoContainer">
-        <ReactPlayer url='https://www.youtube.com/watch?v=7sDY4m8KNLc' ref = {time}/>
+        <ReactPlayer url='https://www.facebook.com/Daleroxxu/videos/151463899863600/' ref = {time}/>
         {/* <div>Current time : {time.current}</div> */}
         <button onClick= {getTime}>Click  </button>
     </div>
