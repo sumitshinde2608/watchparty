@@ -2,21 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Particlesbg from './Particlesbg';
 import './Landing.css'
+import Plex from './PLEX-logo-white.png'
 import Particles from 'react-particles-js';
+
 
 const Landing =() => {
     return (
       <div className = "try">
-            <div style={{ top: 0, left: 0, width: "100%", height: "100%"}} >
-              <Particlesbg>
+            <div >
+              <img src = {Plex} height="20%" width="20%" className="logo"/>
         
-        <h1> Sumit Shinde</h1>
-        <Link  to={`/join`} >
-        <button type = "submit">Click here</button>
+        <div className="buttons"x>
+        <Link  to={`/join`} > 
+        <button className="pushbuttons">JOIN</button>
         </Link>
-        </Particlesbg>
+        <Link to={`/join`}>
+        <button className="pushbuttons"> START NEW</button>
+        </Link>
         </div>
-        
+        </div>
         </div>
     );
 }

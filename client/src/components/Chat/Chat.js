@@ -20,6 +20,7 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  // const [URL, setURL] = useState('');
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -27,7 +28,8 @@ const Chat = ({ location }) => {
     socket = io(ENDPOINT);
 
     setRoom(room);
-    setName(name)
+    setName(name);
+    // setURL(URL)
 
     socket.emit('join', { name, room }, (error) => {
       if(error) {

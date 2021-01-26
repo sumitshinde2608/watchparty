@@ -1,7 +1,51 @@
-.try {
+html {
 	background-color: #1a1a1d;
+}
+
+.try {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.pushbuttons {
+	color: #1a1a1a;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: aliceblue;
+	padding: 15px;
+	border-radius: 50px;
+	margin: 2px;
+	border: solid aliceblue;
+	width: 120px;
+}
+
+.pushbuttons:hover {
+	color: aliceblue;
+	background: black;
+}
+.buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	flex-direction: column;
 }
 
 h1 {
 	color: aliceblue;
+}
+
+.logo {
+	height: 500px;
+	width: auto;
+}
+
+@media (max-width: 500px) {
+	.logo {
+		height: 300px;
+		width: auto;
+	}
 }
