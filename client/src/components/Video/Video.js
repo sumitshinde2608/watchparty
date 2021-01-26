@@ -3,7 +3,7 @@ import React, {useState , useEffect , useRef } from 'react';
 import ReactPlayer from 'react-player';
 
 
-const Video = (url) => {
+const Video = ( { URL }) => {
     const time = useRef(null);
      useEffect(()=>{
         //  time.current = time.getCurrentTime();
@@ -14,12 +14,15 @@ const Video = (url) => {
         console.log(time.current.getCurrentTime());
     }
 
+    
     return(
     
     <div className = "VideoContainer">
-        <ReactPlayer url={url} ref = {time}/>
-        {/* <div>Current time : {time.current}</div> */}
+        {/* {console.log(URL)}; */}
+        <ReactPlayer url={ URL } ref = {time}/>
         <button onClick= {getTime}>Click  </button>
+        <button onClick= {()=> console.log(URL)}>Click Video.js </button> 
+        
     </div>
 
     );

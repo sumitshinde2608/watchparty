@@ -20,18 +20,18 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  // const [URL, setURL] = useState('');
+  const [URL, setURL] = useState('');
 
   useEffect(() => {
-    const { name, room } = queryString.parse(location.search);
+    const { name, room ,URL} = queryString.parse(location.search);
 
     socket = io(ENDPOINT);
 
     setRoom(room);
     setName(name);
-    // setURL(URL)
+    setURL(URL)
 
-    socket.emit('join', { name, room }, (error) => {
+    socket.emit('join', { name, room, URL }, (error) => {
       if(error) {
         alert(error);
       }
@@ -56,6 +56,8 @@ const Chat = ({ location }) => {
     }
   }
 
+  const url2 = URL.toString();
+
   return (
     <div className="outerContainer">
       <div className="container">
@@ -64,7 +66,9 @@ const Chat = ({ location }) => {
           <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
       </div>
       <TextContainer users={users}/>
-      <Video/>
+      <button onClick= {()=> console.log(URL)}>Click Chat.js</button>
+ 
+      <Video URL={url2}/>
     </div>
   );
 }
