@@ -60,15 +60,16 @@ const Chat = ({ location }) => {
 
   return (
     <div className="outerContainer">
+      <Video URL={url2}/>
       <div className="container">
           <InfoBar room={room} />
           <Messages messages={messages} name={name} />
           <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
       </div>
-      <TextContainer users={users}/>
-      <button onClick= {()=> console.log(URL)}>Click Chat.js</button>
+      {/* <TextContainer users={users}/> */}
+      {/* <button onClick= {()=> console.log(URL)}>Click Chat.js</button> */}
  
-      <Video URL={url2}/>
+      
     </div>
   );
 }
