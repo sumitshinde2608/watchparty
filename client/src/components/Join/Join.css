@@ -18,8 +18,14 @@ body {
 	justify-content: center;
 	text-align: center;
 	height: 100vh;
+	flex-direction: column;
 	align-items: center;
 	background-color: #1a1a1d;
+}
+
+.logo {
+	height: 500px;
+	width: auto;
 }
 
 .joinInnerContainer {
@@ -27,7 +33,8 @@ body {
 }
 
 .joinInput {
-	border-radius: 0;
+	border: solid 5px red;
+	border-radius: 50px;
 	padding: 15px 20px;
 	width: 100%;
 }
@@ -55,7 +62,7 @@ body {
 	margin-top: 20px;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 920px) {
 	.joinOuterContainer {
 		height: 100%;
 	}
@@ -63,8 +70,19 @@ body {
 	.joinInnerContainer {
 		width: 90%;
 	}
+
+	.logo {
+		height: 300px;
+		width: auto;
+	}
 }
 
 button:focus {
 	outline: 0;
+}
+
+.icons {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
 }

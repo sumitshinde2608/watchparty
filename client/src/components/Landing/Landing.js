@@ -10,7 +10,7 @@ const Landing =() => {
     return (
       <div className = "try">
             <div >
-              <img src = {Plex} height="20%" width="20%" className="logo"/>
+              <img src = {Plex} className="logo"/>
         
         <div className="buttons"x>
         <Link  to={`/join`} > 
