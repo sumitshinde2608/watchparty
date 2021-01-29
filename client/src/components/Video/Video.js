@@ -18,7 +18,6 @@ const Video = ( { URL }) => {
     return(
     
     <div className = "VideoContainer">
-        {/* {console.log(URL)}; */}
         <ReactPlayer url={ URL } playing={true} ref = {time} height="100vh" width="80vw"/>
         {/* <button onClick= {getTime}>Click  </button> */}
         {/* <button onClick= {()=> console.log(URL)}>Click Video.js </button>  */}
