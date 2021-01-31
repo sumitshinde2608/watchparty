@@ -23,11 +23,12 @@ const Chat = ({ location }) => {
   // const [name, setName] = useState('');
   // const [room, setRoom] = useState('');
   const [users, setUsers] = useState('');
+  const [firstTime, setFirstTime] = useState(true);
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   
   const playerRef = useRef(0);
-  const [playerData, SetPlayerData] = useState({url:URL,playing:false,time:0});
+  const [playerData, SetPlayerData] = useState({url:URL,playing:false,time:0, seeking: false});
 
   useEffect(() => {
 
@@ -81,14 +82,24 @@ useEffect(()=>{
   socket.on('getPlayerInfo',(playerInfo)=>{
     console.log(playerInfo)
   
-    SetPlayerData(playerInfo);
+    SetPlayerData({...playerInfo, seeking: true});
     })
 },[])
 
-// const [PlayerState, SetPlayerState] = useState(player);
+useEffect(()=>{
+  socket.on('getPlayPause', (playerInfo)=>{
+    SetPlayerData({...playerInfo, seeking: true})
+  })
+})
 
 useEffect(()=>{
   console.log(playerData);
+  if(firstTime){
+  setFirstTime(false)
+    return;
+  }
+  if(playerData.seeking) return;
+  socket.emit('sendPlayerState', playerData, response=>{})
 },[playerData.playing])
 
 

@@ -46,6 +46,13 @@ const Video = ( {  playerRef, playerInfo, setPlayerInfo }) => {
         )
     }
 
+    useEffect(()=>{
+        if(playerInfo.seeking) playerRef.current.seekTo(playerInfo.time);
+        setPlayerInfo(prev=>({
+            ...prev, seeking: false
+        }));
+    }, [playerInfo.seeking])
+
     
     return(
     

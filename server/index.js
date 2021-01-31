@@ -6,6 +6,7 @@ const cors = require('cors');
 const { addUser, removeUser, getUser, getUsersInRoom, getUserByID } = require('./users');
 
 const router = require('./router');
+const { isObject } = require('util');
 
 const app = express();
 const server = http.createServer(app);
