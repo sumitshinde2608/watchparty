@@ -66,14 +66,14 @@ const Chat = ({ location }) => {
 
 useEffect(()=>{
   socket.on("requestPlayerInfo",()=> {
-    console.log("Ftr");
+    // console.log("Ftr");
     socket.emit('sendPlayerState',{url:playerRef.current.props.url,
       time:playerRef.current.getCurrentTime(),
       playing:playerRef.current.props.playing},
       (response)=>{
         console.log(response)
     })
-    console.log(playerRef.current.getCurrentTime(),"nbkjhjkfkj")
+    console.log(playerRef.current.getCurrentTime(),)
   })
 },[]);
 
