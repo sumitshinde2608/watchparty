@@ -54,6 +54,13 @@ io.on('connect', (socket) => {
     }
   })
 
+  socket.on('setPlayPause', (playerInfo, callback)=>{
+    const user = getUserById(socket.id);
+    if(user.length>=1){
+      io.in(user[0].room).emit('getPlayerInfo',playerInfo) 
+    }
+  })
+
   socket.on('sendMessage', (message, callback) => {
     const user = getUser(socket.id);
 
