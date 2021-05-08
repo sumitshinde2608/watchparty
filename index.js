@@ -13,7 +13,18 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 app.use(cors());
+
 app.use(router);
+app.use(express.static(path.join(__dirname, 'client/build')));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  app.get('*', (req, res) => {
+    res.sendfile(
+      path.join(__dirname = 'client/build/index.html')
+    );
+  }
+  )
+}
 
 io.on('connect', (socket) => { 
   socket.on('join', ({ name, room }, callback) => {
