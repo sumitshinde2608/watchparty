@@ -34,4 +34,14 @@ For setup, one has to clone the repository into his or her system, install the s
 
 ## Snippets
 
+#### Landing Page
+
 ![Getting Started](snippets/1.png)
+
+#### Sychronised players
+
+![Getting Started](snippets/2.png)
+
+#### Chat Box
+
+![Getting Started](snippets/3.png)
