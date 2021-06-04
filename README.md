@@ -34,4 +34,4 @@ For setup, one has to clone the repository into his or her system, install the s
 
 ## Snippets
 
-file:///home/sumit/Pictures/Screenshot%20from%202021-05-31%2012-32-39.png
+![Getting Started](snippets/1.png)
